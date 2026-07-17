@@ -42,6 +42,9 @@ graph TD
         Classifier --> CleanCSV[Validated & Enriched CSV Output]
     end
 
+    %% Flow connection to force vertical stacking
+    Writer -.->|Generated Raw CSV| RawCSV
+
     %% Styles
     style Start fill:#22d3ee,stroke:#fff,stroke-width:1px,color:#fff
     style Writer fill:#22d3ee,stroke:#fff,stroke-width:1px,color:#fff
