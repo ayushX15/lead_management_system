@@ -17,33 +17,34 @@ This kit provides two distinct utilities: **`lead_gen/`** (the LangGraph agentic
 
 ```mermaid
 graph TD
-    subgraph Lead_Gen_Pipeline ["1. Lead Generation (LangGraph Pipeline)"]
-        Start([Start Target Plan]) --> Research[domain_research: Target list from domains.json]
-        Research --> Discovery[lead_discovery: SerpAPI Maps / JustDial scraper]
-        Discovery --> Dedup{dedup_filter: Already in history.json?}
-        
-        Dedup -->|Yes| Discovery
-        Dedup -->|No| Verify[biz_verify: Validate business active status]
-        
-        Verify --> Contacts[contact_discovery: Scrape websites & public profiles]
-        Contacts --> Intel[decision_maker_intel: Match titles via Apollo/Hunter]
-        Intel --> PhoneVal[contact_verify: Basic formatting checks]
-        PhoneVal --> Enrich[enrichment: Gemini model rotation]
-        
-        Enrich --> QAGate{qa_gate: Score check & targets met?}
-        QAGate -->|No: Need more leads| Discovery
-        QAGate -->|Yes| Writer[csv_writer: Append to domain_leads.csv]
-    end
+    %% Row 1: Plan & Discover
+    Start([Start Plan]) --> Research[domain_research: Target list from domains.json]
+    Research --> Discovery[lead_discovery: SerpAPI/JustDial]
+    Discovery --> Dedup{dedup_filter: Dup?}
+    
+    Dedup -->|Yes| Discovery
+    Dedup -->|No| Verify[biz_verify: Check active status]
 
-    subgraph Lead_Val_System ["2. Lead Validation (Offline Tool)"]
-        RawCSV[Messy Lead CSV] --> Detector[column_detector: Auto-detect name/phone headers]
+    %% Row 2: Scraping & Intelligence
+    Verify --> Contacts[contact_discovery: Scrape websites]
+    Contacts --> Intel[decision_maker_intel: Match titles via Apollo/Hunter]
+    Intel --> PhoneVal[contact_verify: Basic formatting]
+    PhoneVal --> Enrich[enrichment: Gemini model rotation]
+
+    %% Row 3: QA Gate & Save
+    Enrich --> QAGate{qa_gate: Targets met?}
+    QAGate -->|No: Need more leads| Discovery
+    QAGate -->|Yes| Writer[csv_writer: Append CSV]
+
+    %% Connection to validation
+    Writer -.->|Generated Raw CSV| RawCSV[Messy Lead CSV]
+    
+    subgraph Lead_Val_System ["2. Offline Lead Validation Subsystem"]
+        RawCSV --> Detector[column_detector: Auto-detect name/phone headers]
         Detector --> OfflinePhone[phone_validator: Validate numbers via offline library]
         OfflinePhone --> Classifier[category_classifier: Taxonomy-bound LLM classification]
         Classifier --> CleanCSV[Validated & Enriched CSV Output]
     end
-
-    %% Flow connection to force vertical stacking
-    Writer -.->|Generated Raw CSV| RawCSV
 
     %% Styles
     style Start fill:#22d3ee,stroke:#fff,stroke-width:1px,color:#fff
