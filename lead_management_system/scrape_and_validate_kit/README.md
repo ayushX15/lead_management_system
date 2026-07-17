@@ -16,8 +16,9 @@ Two independent subsystems:
 This kit provides two distinct utilities: **`lead_gen/`** (the LangGraph agentic scraping loop) and **`lead_val/`** (the offline phone and taxonomy classifier).
 
 ```mermaid
-graph TD
+graph LR
     subgraph Lead_Gen_Pipeline ["1. Lead Generation (LangGraph Pipeline)"]
+        direction TB
         %% Row 1: Plan & Discover
         Start([Start Plan]) --> Research[domain_research: Target list from domains.json]
         Research --> Discovery[lead_discovery: SerpAPI/JustDial]
@@ -39,6 +40,7 @@ graph TD
     end
 
     subgraph Lead_Val_System ["2. Offline Lead Validation Subsystem"]
+        direction TB
         RawCSV[Messy Lead CSV] --> Detector[column_detector: Auto-detect name/phone headers]
         Detector --> OfflinePhone[phone_validator: Validate numbers via offline library]
         OfflinePhone --> Classifier[category_classifier: Taxonomy-bound LLM classification]
