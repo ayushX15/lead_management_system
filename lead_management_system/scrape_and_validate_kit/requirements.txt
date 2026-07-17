@@ -1,0 +1,13 @@
+langgraph
+google-genai
+httpx
+beautifulsoup4
+pandas
+python-dotenv
+pydantic
+phonenumbers
+
+# Optional - enables the browser-based contact discovery steps
+# (Google Maps, LinkedIn, IndiaMART, WhatsApp mining).
+# After installing, also run:  playwright install chromium
+# playwright

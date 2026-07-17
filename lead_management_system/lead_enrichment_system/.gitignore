@@ -1,0 +1,26 @@
+.env
+output/
+.venv/
+lead_env/
+__pycache__/
+*.pyc
+logs/
+
+# Hide sensitive keys and testing logs
+*key*.json
+*credentials*.json
+*secret*.json
+# unique_keywords.json is a safe config that the *key*.json rule accidentally matches
+!lead_clean/configs/unique_keywords.json
+testing_service_key/
+*test*.py
+
+# Hide user data
+input/
+*.csv
+
+# Runtime pipeline state (registry, model state, CSV cache, telemetry)
+pipeline_data/
+
+# Generated mapping maps (rebuilt by scripts/build_mapping.py)
+lead_clean/mapping_data/

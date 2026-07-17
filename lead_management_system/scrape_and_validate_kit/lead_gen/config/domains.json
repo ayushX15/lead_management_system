@@ -1,0 +1,43 @@
+{
+  "domains": [
+    {
+      "name": "real_estate",
+      "subcategories": [
+        "real estate agents",
+        "property dealers",
+        "builders and developers",
+        "property consultants"
+      ]
+    },
+    {
+      "name": "salon_spa",
+      "subcategories": [
+        "beauty salon",
+        "hair salon",
+        "spa and massage centre",
+        "unisex salon",
+        "nail studio"
+      ]
+    },
+    {
+      "name": "financial_services",
+      "subcategories": [
+        "chartered accountants",
+        "financial advisors",
+        "loan consultants",
+        "insurance agents",
+        "tax consultants"
+      ]
+    },
+    {
+      "name": "educational_institutes",
+      "subcategories": [
+        "coaching centre",
+        "play school",
+        "computer training institute",
+        "tuition centre",
+        "vocational training institute"
+      ]
+    }
+  ]
+}

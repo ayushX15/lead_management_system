@@ -1,0 +1,23 @@
+{
+  "First Name": ["First Name", "firstname", "fullname", "first_name"],
+  "Last Name": ["Last Name", "lastname", "last_name"],
+  "Title": ["Title", "title"],
+  "Company Name": ["Company", "company", "companyy", "company_name"],
+  "Company Email": ["Email", "email", "company_email"],
+  "Contact Number_1": ["First Phone", "phone", "phone1", "contact_number_1"],
+  "Contact Number_2": ["Mobile Phone", "phone2", "contact_number_2"],
+  "No of Employees": ["# Employees", "no_of_employees"],
+  "Industry": ["Industry", "industry"],
+  "Keywords": ["Keywords", "keyword", "keywords"],
+  "Person LinkedIn": ["Person Linkedin Url", "linkedin", "person_linkedin", "person_linkedin_url"],
+  "Company LinkedIn": ["Company Linkedin Url", "company_linkedin", "company_linkedin_url"],
+  "Company Website": ["Website", "website", "company_website"],
+  "Company Facebook": ["Facebook Url", "company_facebook"],
+  "Company Twitter": ["Twitter Url", "company_twitter"],
+  "City": ["City", "city"],
+  "State": ["State", "state"],
+  "Country": ["Country", "country"],
+  "Annual Revenue": ["Annual Revenue", "annual_revenue"],
+  "Total Funding": ["Total Funding", "total_funding"],
+  "Last Funding": ["Latest Funding Amount", "last_funding"]
+}

@@ -1,0 +1,63 @@
+# =====================================================================
+#  Repo-root ignore rules - protects BOTH projects
+#  (lead_enrichment_system + scrape_and_validate_kit) from ever
+#  committing secrets, credentials, private lead data, or venvs.
+# =====================================================================
+
+# ---- Secrets & credentials (NEVER commit) ----
+.env
+.env.*
+!.env.example
+*service*key*.json
+*service_account*.json
+*credentials*.json
+*secret*.json
+# GCP service-account key used by Vertex AI models
+research_lab_service_key.json
+
+# ---- Private lead data (PII: names, emails, phones) ----
+# This is a lead-data project; NO csv/jsonl belongs on GitHub.
+*.csv
+*.jsonl
+CSV DATA/
+complete_raw.csv
+
+# ---- Runtime state & generated output ----
+pipeline_data/
+lead_clean/mapping_data/
+mapping_data/
+lead_gen/output/
+lead_val/output/
+lead_val/input/
+output/
+logs/
+
+# ---- Virtual environments ----
+lead_env/
+.venv/
+venv/
+env/
+
+# ---- Python cruft ----
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+
+# ---- Rendered diagram images are fine to keep; PlantUML temp is not ----
+*.puml.tmp
+
+# ---- Editor / OS ----
+.DS_Store
+Thumbs.db
+*.swp
+
+# =====================================================================
+#  Exceptions - config files that MUST stay tracked even though they
+#  match a pattern above.
+# =====================================================================
+# unique_keywords.json is a required dropdown config that the
+# *key*.json rules would otherwise catch.
+!**/unique_keywords.json

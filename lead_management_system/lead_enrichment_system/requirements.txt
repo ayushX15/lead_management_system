@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+modal
+boto3
+pandas
+google-genai
+google-auth
+requests
+beautifulsoup4
+pydantic
+python-dotenv
+tzdata
+streamlit

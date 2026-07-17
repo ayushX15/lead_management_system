@@ -1,0 +1,144 @@
+{
+  "taxonomy": [
+    {
+      "domain": "E-Commerce",
+      "subdomains": ["Clothing & Apparel", "Grocery & Food", "Electronics", "Furniture & Home Decor", "Beauty & Personal Care", "Jewellery & Accessories", "Sports & Outdoor", "Books & Stationery", "Toys & Games", "Multi-Purpose Marketplace", "Automobile Parts", "Pet Supplies", "Health & Wellness Products", "Baby & Kids Products", "Handicrafts & Gifts"]
+    },
+    {
+      "domain": "Food & Beverage",
+      "subdomains": ["Restaurant", "Cafe & Bakery", "Fast Food / QSR", "Cloud Kitchen", "Catering Service", "Food Delivery Platform", "Bar & Brewery", "Juice & Smoothie Bar", "Sweet Shop / Mithai", "Tiffin / Meal Subscription", "Food Manufacturing", "Spices & Condiments", "Dairy Products", "Packaged Snacks", "Beverages Brand"]
+    },
+    {
+      "domain": "Healthcare & Medical",
+      "subdomains": ["Hospital", "Clinic / Polyclinic", "Pharmacy / Medical Store", "Diagnostic Lab", "Telemedicine", "Dental Care", "Eye Care / Optometry", "Mental Health", "Physiotherapy", "Ayurveda / Homeopathy", "Veterinary", "Medical Equipment Supplier", "Health Insurance", "Nursing & Home Care", "Fertility & IVF"]
+    },
+    {
+      "domain": "Education & Training",
+      "subdomains": ["School / K-12", "College / University", "Coaching & Tutoring", "Online Learning Platform", "Skill Development", "Language Learning", "Vocational Training", "Test Preparation", "Early Childhood / Preschool", "Special Education", "Corporate Training", "Music / Dance / Arts Academy", "Sports Academy", "Study Abroad Consultancy", "EdTech SaaS"]
+    },
+    {
+      "domain": "Finance & Banking",
+      "subdomains": ["Bank", "NBFC / Microfinance", "Insurance", "Mutual Fund / Investment", "Stock Broking", "Accounting & Bookkeeping", "Tax Consultancy", "Loans & Credit", "Cryptocurrency / Blockchain Finance", "Payment Gateway", "Wealth Management", "Fintech Startup", "Chit Fund", "Credit Union / Cooperative Bank", "Foreign Exchange"]
+    },
+    {
+      "domain": "Real Estate & Property",
+      "subdomains": ["Residential Property", "Commercial Property", "Property Listing Portal", "Construction Company", "Interior Design", "Architecture Firm", "Property Management", "Co-Working Space", "Land & Plot Sales", "Real Estate Consultancy", "Rental Services", "Smart Home Solutions", "Facility Management"]
+    },
+    {
+      "domain": "Technology & IT Services",
+      "subdomains": ["Software Development", "Web Development", "Mobile App Development", "IT Consulting", "Cloud Services", "Cybersecurity", "AI / ML Solutions", "Data Analytics", "ERP / CRM Solutions", "IT Support & Managed Services", "DevOps & Infrastructure", "IoT Solutions", "Blockchain Development", "Game Development", "SaaS Product"]
+    },
+    {
+      "domain": "Travel & Tourism",
+      "subdomains": ["Travel Agency", "Tour Operator", "Hotel / Resort", "Hostel / Guesthouse", "Online Travel Booking Platform", "Airline", "Car Rental", "Cruise", "Adventure Tourism", "Pilgrimage / Religious Tourism", "Visa & Immigration Services", "Eco-Tourism", "Corporate Travel Management", "Honeymoon Packages", "Camping & Trekking"]
+    },
+    {
+      "domain": "Logistics & Supply Chain",
+      "subdomains": ["Courier & Delivery", "Freight & Cargo", "Warehousing", "Cold Chain Logistics", "Last-Mile Delivery", "Customs Clearance", "E-Commerce Logistics", "Fleet Management", "3PL / 4PL Provider", "Moving & Relocation Services", "Packaging Solutions", "Supply Chain Software"]
+    },
+    {
+      "domain": "Manufacturing & Industrial",
+      "subdomains": ["Textile & Garment Manufacturing", "Auto Parts Manufacturing", "Chemical Manufacturing", "Pharmaceutical Manufacturing", "Food Processing", "Metal & Steel Fabrication", "Plastic & Rubber Products", "Paper & Packaging", "Electronics Manufacturing", "Furniture Manufacturing", "Machinery & Equipment", "Construction Materials", "Printing & Publishing", "Ceramics & Glass"]
+    },
+    {
+      "domain": "Agriculture & Farming",
+      "subdomains": ["Crop Farming", "Dairy Farming", "Poultry & Livestock", "Fisheries & Aquaculture", "Agri-Input (Seeds, Fertilizers)", "Agri-Tech Platform", "Organic Farming", "Horticulture & Floriculture", "Agricultural Consultancy", "Farm Equipment", "Irrigation Solutions", "Agricultural Export"]
+    },
+    {
+      "domain": "Media & Entertainment",
+      "subdomains": ["News Portal", "OTT / Streaming Platform", "Music Streaming", "Film Production", "TV / Radio Broadcasting", "Podcast Platform", "Gaming Platform", "Event Ticketing", "Comedy & Talent Shows", "Book Publishing", "Magazine / Journal", "Animation & VFX Studio", "Digital Content Creator Platform"]
+    },
+    {
+      "domain": "Marketing & Advertising",
+      "subdomains": ["Digital Marketing Agency", "SEO & Content Marketing", "Social Media Marketing", "Performance Marketing", "PR & Communications", "Branding Agency", "Outdoor / OOH Advertising", "Print Advertising", "Influencer Marketing Platform", "Market Research", "Email Marketing Tool", "Ad Network / DSP"]
+    },
+    {
+      "domain": "Legal & Compliance",
+      "subdomains": ["Law Firm", "Corporate Legal Services", "Intellectual Property / Patents", "Taxation & GST Consultancy", "Company Registration / Compliance", "Arbitration & Mediation", "Criminal Law", "Family & Civil Law", "Labour & Employment Law", "Legal Tech Platform", "Notary Services"]
+    },
+    {
+      "domain": "HR & Recruitment",
+      "subdomains": ["Staffing & Recruitment Agency", "Job Portal", "HR Software / HRMS", "Payroll Services", "Background Verification", "Executive Search / Headhunting", "Freelance Platform", "Employer Branding", "Gig Economy Platform", "Outplacement Services"]
+    },
+    {
+      "domain": "Automotive",
+      "subdomains": ["Car Dealership", "Two-Wheeler Dealership", "Used Vehicle Marketplace", "Auto Repair & Service", "Car Wash & Detailing", "EV & Charging Solutions", "Auto Insurance", "Fleet Management", "Driving School", "Auto Parts & Accessories Retail", "Vehicle Rental / Leasing"]
+    },
+    {
+      "domain": "Energy & Utilities",
+      "subdomains": ["Solar Energy", "Wind Energy", "Oil & Gas", "Electricity Distribution", "Water Supply & Treatment", "Biogas / Biomass", "Energy Audit & Consultancy", "EV Charging Infrastructure", "Battery Storage Solutions", "Smart Grid / Metering"]
+    },
+    {
+      "domain": "Government & Public Sector",
+      "subdomains": ["Municipal Corporation / Local Body", "State Government Department", "Central Government Portal", "Public Sector Undertaking (PSU)", "Defence & Military", "Judiciary / Court", "Police & Law Enforcement", "Public Transport Authority", "Regulatory Body", "Government Scheme Portal"]
+    },
+    {
+      "domain": "NGO & Social Impact",
+      "subdomains": ["Child Welfare", "Women Empowerment", "Education NGO", "Healthcare NGO", "Environment & Conservation", "Animal Welfare", "Disaster Relief", "Rural Development", "Human Rights", "Senior Citizen Care", "CSR Foundation", "Religious / Charitable Trust"]
+    },
+    {
+      "domain": "Fashion & Lifestyle",
+      "subdomains": ["Clothing Brand", "Footwear Brand", "Luxury Fashion", "Sustainable / Ethical Fashion", "Ethnic Wear", "Sportswear", "Accessories Brand", "Fashion Blog / Magazine", "Personal Styling Service", "Fashion Tech Platform"]
+    },
+    {
+      "domain": "Beauty & Wellness",
+      "subdomains": ["Salon & Spa", "Beauty Product Brand", "Skincare Brand", "Haircare Brand", "Makeup Brand", "Wellness Center / Yoga Studio", "Gym & Fitness Center", "Nutrition & Dietetics", "Meditation & Mindfulness", "Cosmetic Surgery Clinic"]
+    },
+    {
+      "domain": "Architecture & Construction",
+      "subdomains": ["Architecture Firm", "Civil Construction", "Interior Design Studio", "Landscape Architecture", "Green Building / Sustainable Construction", "Project Management Consultancy", "Structural Engineering", "Urban Planning", "Home Renovation Services", "Swimming Pool Construction"]
+    },
+    {
+      "domain": "Events & Entertainment",
+      "subdomains": ["Event Management Company", "Wedding Planner", "Corporate Event Organiser", "Venue / Banquet Hall", "Photography & Videography", "DJ / Entertainment Services", "Catering for Events", "Decoration Services", "Concert & Live Event Promoter", "Virtual Event Platform"]
+    },
+    {
+      "domain": "Telecommunications",
+      "subdomains": ["Mobile Network Operator", "Internet Service Provider", "DTH / Cable TV", "VoIP & Communication Tools", "Enterprise Networking", "Satellite Communication", "Telecom Equipment Supplier", "MVNO", "Cloud Communication / CPaaS"]
+    },
+    {
+      "domain": "Environment & Sustainability",
+      "subdomains": ["Waste Management & Recycling", "Water Conservation", "Air Quality Solutions", "Sustainable Products", "Carbon Offset Services", "Environmental Consultancy", "Clean Tech Startup", "Green Certification Bodies", "Plastic Alternatives", "Reforestation & Conservation"]
+    },
+    {
+      "domain": "Sports & Recreation",
+      "subdomains": ["Sports Club / Academy", "Fantasy Sports Platform", "Sports Equipment Retail", "Sports Event Management", "Fitness App", "Outdoor Recreation", "eSports", "Cricket / Football Club", "Yoga & Martial Arts", "Swimming & Aquatics"]
+    },
+    {
+      "domain": "Home Services",
+      "subdomains": ["Plumbing", "Electrical Services", "Carpentry", "Cleaning & Housekeeping", "Pest Control", "Appliance Repair", "Painting & Waterproofing", "Home Security Systems", "Gardening & Landscaping", "Laundry & Dry Cleaning"]
+    },
+    {
+      "domain": "Photography & Creative",
+      "subdomains": ["Photography Studio", "Videography / Film Production", "Graphic Design", "Animation Studio", "3D Printing & Modelling", "Illustration & Art", "Content Writing Agency", "Podcast Production", "Music Production", "Printing & Merchandise"]
+    },
+    {
+      "domain": "Import & Export",
+      "subdomains": ["Agricultural Commodities Export", "Textile Export", "Handicraft Export", "Machinery Import/Export", "Chemicals Export", "Gems & Jewellery Export", "IT Services Export", "Pharmaceutical Export", "Import Consultancy", "Trade Finance Services"]
+    },
+    {
+      "domain": "Pet & Animal",
+      "subdomains": ["Pet Food & Products", "Veterinary Clinic", "Pet Grooming", "Pet Adoption Platform", "Animal Shelter / NGO", "Pet Training", "Aquarium & Exotic Pets", "Livestock Services", "Pet Insurance", "Pet Boarding & Daycare"]
+    },
+    {
+      "domain": "Research & Development",
+      "subdomains": ["Scientific Research Institute", "Biotech / Life Sciences R&D", "Market Research Firm", "Product Testing & Certification", "Clinical Research Organization (CRO)", "Innovation Lab", "Space Research", "Social Research", "Academic Research Portal"]
+    },
+    {
+      "domain": "Mining & Natural Resources",
+      "subdomains": ["Coal Mining", "Metal Mining (Iron, Copper, Gold)", "Quarrying (Sand, Stone, Gravel)", "Oil & Gas Extraction", "Mineral Processing", "Mining Equipment Supplier", "Environmental Mining Compliance"]
+    },
+    {
+      "domain": "Chemicals & Materials",
+      "subdomains": ["Specialty Chemicals", "Agrochemicals", "Paints & Coatings", "Adhesives & Sealants", "Polymers & Plastics", "Lubricants", "Industrial Gases", "Dyes & Pigments", "Detergents & Cleaning Agents", "Explosives & Safety Chemicals"]
+    },
+    {
+      "domain": "Security Services",
+      "subdomains": ["Physical Security / Guard Services", "CCTV & Surveillance", "Cybersecurity Firm", "Fire Safety & Equipment", "Alarm Systems", "Access Control Solutions", "Biometric Systems", "Fraud Detection", "Background Check Services"]
+    },
+    {
+      "domain": "Retail & General Trade",
+      "subdomains": ["General Store / Kirana", "Supermarket / Hypermarket", "Department Store", "Wholesale / Distribution", "Pharmacy Retail Chain", "Optical Store", "Hardware Store", "Auto Parts Retail", "Electronics Retail", "Bookstore"]
+    }
+  ]
+}
