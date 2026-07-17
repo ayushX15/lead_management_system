@@ -16,39 +16,35 @@ Two independent subsystems:
 This kit provides two distinct utilities: **`lead_gen/`** (the LangGraph agentic scraping loop) and **`lead_val/`** (the offline phone and taxonomy classifier).
 
 ```mermaid
-graph LR
-    subgraph Lead_Gen_Pipeline ["1. Lead Generation (LangGraph Pipeline)"]
-        direction TB
-        %% Row 1: Plan & Discover
-        Start([Start Plan]) --> Research[domain_research: Target list from domains.json]
-        Research --> Discovery[lead_discovery: SerpAPI/JustDial]
-        Discovery --> Dedup{dedup_filter: Dup?}
-        
-        Dedup -->|Yes| Discovery
-        Dedup -->|No| Verify[biz_verify: Check active status]
+graph TD
+    %% Row 1: Plan & Discover
+    Start([Start Plan]) --> Research[domain_research: Target list from domains.json]
+    Research --> Discovery[lead_discovery: SerpAPI/JustDial]
+    Discovery --> Dedup{dedup_filter: Dup?}
+    
+    Dedup -->|Yes| Discovery
+    Dedup -->|No| Verify[biz_verify: Check active status]
 
-        %% Row 2: Scraping & Intelligence
-        Verify --> Contacts[contact_discovery: Scrape websites]
-        Contacts --> Intel[decision_maker_intel: Match titles via Apollo/Hunter]
-        Intel --> PhoneVal[contact_verify: Basic formatting]
-        PhoneVal --> Enrich[enrichment: Gemini model rotation]
+    %% Row 2: Scraping & Intelligence
+    Verify --> Contacts[contact_discovery: Scrape websites]
+    Contacts --> Intel[decision_maker_intel: Match titles via Apollo/Hunter]
+    Intel --> PhoneVal[contact_verify: Basic formatting]
+    PhoneVal --> Enrich[enrichment: Gemini model rotation]
 
-        %% Row 3: QA Gate & Save
-        Enrich --> QAGate{qa_gate: Targets met?}
-        QAGate -->|No: Need more leads| Discovery
-        QAGate -->|Yes| Writer[csv_writer: Append CSV]
-    end
+    %% Row 3: QA Gate & Save
+    Enrich --> QAGate{qa_gate: Targets met?}
+    QAGate -->|No: Need more leads| Discovery
+    QAGate -->|Yes| Writer[csv_writer: Append CSV]
 
+    %% Connection to validation
+    Writer -.->|Generated Raw CSV| RawCSV[Messy Lead CSV]
+    
     subgraph Lead_Val_System ["2. Offline Lead Validation Subsystem"]
-        direction TB
-        RawCSV[Messy Lead CSV] --> Detector[column_detector: Auto-detect name/phone headers]
+        RawCSV --> Detector[column_detector: Auto-detect name/phone headers]
         Detector --> OfflinePhone[phone_validator: Validate numbers via offline library]
         OfflinePhone --> Classifier[category_classifier: Taxonomy-bound LLM classification]
         Classifier --> CleanCSV[Validated & Enriched CSV Output]
     end
-
-    %% Flow connection to bridge them side-by-side
-    Writer -.->|Generated Raw CSV| RawCSV
 
     %% Styles
     style Start fill:#22d3ee,stroke:#fff,stroke-width:1px,color:#fff
