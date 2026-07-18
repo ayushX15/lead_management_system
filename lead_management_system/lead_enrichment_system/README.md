@@ -21,6 +21,8 @@ This system converts that chaos into a database where a query like *"CEOs of Tie
 
 ---
 
+## 2. System at a glance & workflows
+
 This monorepo handles two primary workflows: the **Lead Enrichment ETL Pipeline** (which writes clean database leads to DynamoDB) and the **People ↔ Organization Mapping Dashboard** (which builds offline relationship profiles from CSV chunks).
 
 ```mermaid
@@ -82,6 +84,8 @@ graph TD
 
 **Stack:** Python · Pandas · Boto3 (S3, DynamoDB) · google-genai (AI Studio + Vertex AI) · BeautifulSoup · FastAPI/Uvicorn · Streamlit · Modal.
 
+> 📊 Pre-rendered architecture & data-flow diagrams (system architecture, ETL flow, model-router states, search-API sequence) are in [`workflow_diagrams/diagrams/`](workflow_diagrams/diagrams/).
+
 ---
 
 ## 3. Repository layout — every file, what it does
@@ -89,11 +93,12 @@ graph TD
 ```
 lead_enrichment_system/
 ├── README.md                     ← this file
-├── ARCHITECTURE.puml             ← PlantUML architecture & data-flow diagrams
 ├── requirements.txt              ← Python dependencies
 ├── .env / .env.example           ← credentials + runtime knobs (see §5)
+├── .gitignore                    ← ignores .env, keys, CSVs, venv, runtime state
 ├── .streamlit/config.toml        ← dark theme for the mapping dashboard
 ├── .vscode/settings.json         ← points VS Code at lead_env's interpreter
+├── workflow_diagrams/diagrams/   ← rendered architecture & data-flow PNGs
 ├── lead_env/                     ← project virtualenv (git-ignored)
 └── lead_clean/
     ├── clean_orchestrator.py     ← THE PIPELINE (deep dive in §7)
@@ -173,13 +178,13 @@ Vertex AI models authenticate via `configs/research_lab_service_key.json` instea
 
 ```bash
 git clone <your-repo-url>
-cd lead_management_system/lead_enrichment_system
+cd <repo>/lead_management_system/lead_enrichment_system   # this folder holds lead_clean/ + requirements.txt
 python -m venv lead_env
 .\lead_env\Scripts\activate            # Windows | source lead_env/bin/activate (Mac/Linux)
 pip install -r requirements.txt
 ```
 
-1. Copy `.env.example` → `.env`, fill in AWS + Gemini credentials.
+1. Copy `.env.example` → `.env`, fill in AWS + Gemini credentials (see the §5.1 table for every variable).
 2. Place your GCP service-account key at `lead_clean/configs/research_lab_service_key.json` (only needed for `vertex: true` models).
 3. Provision all AWS resources (safe to re-run; existing resources are left untouched):
    ```bash

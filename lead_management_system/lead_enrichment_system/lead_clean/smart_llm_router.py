@@ -52,20 +52,28 @@ class SmartLLMRouter:
         # 1. AI Studio client
         self.client_api = genai.Client(api_key=os.environ.get('GEMINI_API_KEY'))
 
-        # 2. Vertex AI client (service key)
+        # 2. Vertex AI client (service key). Project/location come from the env
+        # (VERTEX_PROJECT / VERTEX_LOCATION) so no GCP identifier is hardcoded in
+        # source. If VERTEX_PROJECT is unset, the Vertex client is simply skipped
+        # and only the AI-Studio (vertex:false) models are used.
         key_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "configs", "research_lab_service_key.json")
-        try:
-            credentials = service_account.Credentials.from_service_account_file(
-                key_path, scopes=["https://www.googleapis.com/auth/cloud-platform"])
-            self.client_vertex = genai.Client(
-                vertexai=True,
-                project="gen-lang-client-0845898590",
-                location="us-central1",
-                credentials=credentials
-            )
-        except Exception as e:
-            print(f"[ROUTER INIT ERROR] Failed to load Vertex AI Service Key from {key_path}: {e}")
+        vertex_project = os.environ.get("VERTEX_PROJECT", "").strip()
+        vertex_location = os.environ.get("VERTEX_LOCATION", "us-central1").strip()
+        if not vertex_project:
             self.client_vertex = None
+        else:
+            try:
+                credentials = service_account.Credentials.from_service_account_file(
+                    key_path, scopes=["https://www.googleapis.com/auth/cloud-platform"])
+                self.client_vertex = genai.Client(
+                    vertexai=True,
+                    project=vertex_project,
+                    location=vertex_location,
+                    credentials=credentials
+                )
+            except Exception as e:
+                print(f"[ROUTER INIT ERROR] Failed to load Vertex AI Service Key from {key_path}: {e}")
+                self.client_vertex = None
 
         with open(limits_json_path, 'r') as f:
             self.models: List[Dict] = json.load(f).get("models", [])
